@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 
@@ -10,7 +10,7 @@ const Navbar = () => {
                 <Link to="/" className="navbar-logo">
                     <span className="logo-text">PlayShifu</span>
                 </Link>
-                <Link to="/products" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+                <Link to="/products" className="nav-link">
                     Products
                 </Link>
             </div>

@@ -1,7 +1,7 @@
 
 import './App.css'
 import Navbar from './components/Navbar'
-import ProductPage from './components/ProductPage '
+import ProductPage from './components/ProductPage'
 import { Route, Routes } from 'react-router-dom'
 
 function App() {
