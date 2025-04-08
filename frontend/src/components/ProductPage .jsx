@@ -3,22 +3,18 @@ import axios from 'axios';
 import '../styles/ProductPage.css';
 
 const ProductPage = () => {
-  // State for products and filters
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   
-  // Search and filter state
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('default');
   
-  // Fetch products on component mount
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        // Using the correct URL for your API
         const response = await axios.get('https://playshifu-lkui.onrender.com/products', {
           headers: {
             'Content-Type': 'application/json',
@@ -42,11 +38,9 @@ const ProductPage = () => {
     fetchProducts();
   }, []);
 
-  // filters, sorting and search
   useEffect(() => {
     let result = [...products];
     
-    //  search filter
     if (searchTerm) {
       result = result.filter(product => 
         product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -80,10 +74,9 @@ const ProductPage = () => {
   const handleResetFilters = () => {
     setSearchTerm('');
     setSortBy('default');
-
   };
 
-  // Format price for display
+  // price for display
   const formatPrice = (price) => {
     return `₹${(price / 100).toFixed(2)}`;
   };
