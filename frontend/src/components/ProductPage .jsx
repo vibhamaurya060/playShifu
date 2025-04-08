@@ -19,7 +19,7 @@ const ProductPage = () => {
       try {
         setLoading(true);
         // Using the correct URL for your API
-        const response = await axios.get('http://localhost:8080/products', {
+        const response = await axios.get('https://playshifu-lkui.onrender.com/products', {
           headers: {
             'Content-Type': 'application/json',
           }
